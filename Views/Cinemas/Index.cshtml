@@ -1,0 +1,51 @@
+﻿@model IEnumerable<cinevo_mvc.Models.Cinema>
+
+@{
+    ViewBag.Title = "CinemasIndex";
+}
+
+<h2>CinemasIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Town)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Town)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item._id }) |
+            @Html.ActionLink("Details", "Detail", new { id =item._id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item._id })
+        </td>
+    </tr>
+}
+
+</table>
